@@ -42,19 +42,34 @@ body {
 .property-body {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 40px;
 }
 
 .property-container h2 {
   font-size: 3rem;
+  margin-bottom: 50px;
 }
 /*Property Container End*/
 
 /*Property Start */
 .property-box {
   background-color: #e8aa9b;
-  width: 700px;
-  height: 400px;
+  width: 600px;
+  height: 600px;
+  border-radius: 10px;
+}
+
+.property-photo-container {
+  width: 100%;
+  height: 50%;
+}
+
+.property-photo-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0px 0px;
 }
 /*Property End */
 
