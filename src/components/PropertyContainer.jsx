@@ -8,6 +8,7 @@ export default function PropertyContainer() {
       <div className="property-body">
         <Property />
         <Property />
+        <Property />
       </div>
     </div>
   );
