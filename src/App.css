@@ -114,6 +114,21 @@ body {
 }
 /*Property End */
 
+/*Property Info Start */
+.property-info {
+  position: fixed;
+  background-color: #e3d3c4;
+  /* Centers the info box on the screen. */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 70%;
+  height: 70%;
+  z-index: 2;
+}
+/*Property Info End */
+
 /*Footer Start */
 .footer {
   display: flex;
