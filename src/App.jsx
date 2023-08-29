@@ -9,18 +9,14 @@ import SanityClient from "./client.js";
 export default function App() {
   const [displayInfo, setDisplayInfo] = useState(false);
   const [homes, setHomes] = useState([]);
+  const [selectedHome, setSelectedHome] = useState([]);
+  let infoContainer = useRef();
+
+  console.log(selectedHome);
 
   useEffect(() => {
     SanityClient.fetch(`*[_type == "listHome"]`).then((data) => setHomes(data));
   }, []);
-
-  // useEffect(() => {
-  //   homes.map((homes) => {
-  //     console.log(homes);
-  //   });
-  // }, [homes]);
-
-  let infoContainer = useRef();
 
   function displayInfoSetter() {
     if (displayInfo === true) {
@@ -30,6 +26,10 @@ export default function App() {
     }
   }
 
+  function selectedHomeSetter(home) {
+    setSelectedHome(home);
+  }
+
   return (
     <div className="app">
       <Hero />
@@ -37,11 +37,13 @@ export default function App() {
         display={displayInfo}
         infoContainer={infoContainer}
         displayInfo={displayInfoSetter}
+        selectedHome={selectedHome}
       />
       <PropertyContainer
         displayInfo={displayInfoSetter}
         display={displayInfo}
         homes={homes}
+        selectHome={selectedHomeSetter}
       />
       <Footer />
     </div>

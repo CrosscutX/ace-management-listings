@@ -8,6 +8,7 @@ export default function Property(props) {
         className="property-box"
         onClick={(e) => {
           e.stopPropagation();
+          props.selectHome(props.home);
           props.displayInfo();
         }}
       >

@@ -11,10 +11,11 @@ export default function PropertyContainer(props) {
   }
 
   let mapHomes = props.homes.map((home, index) => {
-    console.log(home["mainImage"]["asset"]["_ref"]);
+    console.log(home["mainImage"]["asset"]);
     return (
       <Property
         key={index}
+        home={home}
         displayInfo={props.displayInfo}
         display={props.display}
         price={home["price"]}
@@ -24,6 +25,7 @@ export default function PropertyContainer(props) {
         squareFeet={home["sqft"]}
         address={home["address"]}
         mainImage={urlFor(home["mainImage"]["asset"])}
+        selectHome={props.selectHome}
       />
     );
   });
