@@ -12,17 +12,17 @@ export default function Property(props) {
         }}
       >
         <div className="property-photo-container">
-          <img src={House} alt="House Photo" />
+          <img src={props.mainImage} alt="House Photo" />
         </div>
         <div className="property-info-container">
-          <span className="price">$900</span>
-          <span className="sales-type">For Rent</span>
+          <span className="price">${props.price}</span>
+          <span className="sales-type">{props.rentOrOwn}</span>
           <div className="property-size">
-            <span className="bedrooms">3 bds |</span>
-            <div className="bathrooms">2 bas |</div>
-            <span className="square-feet"> 1,500 sqft</span>
+            <span className="bedrooms">{props.bedrooms} bds |</span>
+            <div className="bathrooms">{props.bathrooms} bas |</div>
+            <span className="square-feet"> {props.squareFeet} sqft</span>
           </div>
-          <span className="address">1145 West Comet Rd, Clinton, OH 44216</span>
+          <span className="address">{props.address}</span>
           <button type="button" className="apply-button">
             Apply
           </button>

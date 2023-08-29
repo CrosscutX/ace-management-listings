@@ -14,11 +14,12 @@ export default function App() {
     SanityClient.fetch(`*[_type == "listHome"]`).then((data) => setHomes(data));
   }, []);
 
-  useEffect(() => {
-    homes.map((homes) => {
-      console.log(homes);
-    });
-  }, [homes]);
+  // useEffect(() => {
+  //   homes.map((homes) => {
+  //     console.log(homes);
+  //   });
+  // }, [homes]);
+
   let infoContainer = useRef();
 
   function displayInfoSetter() {
@@ -40,6 +41,7 @@ export default function App() {
       <PropertyContainer
         displayInfo={displayInfoSetter}
         display={displayInfo}
+        homes={homes}
       />
       <Footer />
     </div>
