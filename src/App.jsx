@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./App.css";
 import Hero from "./components/Hero";
 import PropertyContainer from "./components/PropertyContainer";
@@ -19,6 +19,7 @@ export default function App() {
       console.log(homes);
     });
   }, [homes]);
+  let infoContainer = useRef();
 
   function displayInfoSetter() {
     if (displayInfo === true) {
@@ -31,8 +32,15 @@ export default function App() {
   return (
     <div className="app">
       <Hero />
-      <PropertyInfo display={displayInfo} />
-      <PropertyContainer displayInfo={displayInfoSetter} />
+      <PropertyInfo
+        display={displayInfo}
+        infoContainer={infoContainer}
+        displayInfo={displayInfoSetter}
+      />
+      <PropertyContainer
+        displayInfo={displayInfoSetter}
+        display={displayInfo}
+      />
       <Footer />
     </div>
   );

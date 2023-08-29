@@ -4,7 +4,13 @@ import House from "../assets/houses.jpg";
 export default function Property(props) {
   return (
     <div className="property">
-      <div className="property-box" onClick={props.displayInfo}>
+      <div
+        className="property-box"
+        onClick={(e) => {
+          e.stopPropagation();
+          props.displayInfo();
+        }}
+      >
         <div className="property-photo-container">
           <img src={House} alt="House Photo" />
         </div>
