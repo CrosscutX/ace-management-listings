@@ -117,15 +117,71 @@ body {
 /*Property Info Start */
 .property-info {
   position: fixed;
+  display: flex;
+  flex-direction: column;
   background-color: #e3d3c4;
   /* Centers the info box on the screen. */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  padding: 10px;
+  padding-bottom: 20px;
+  border-radius: 10px;
   width: 70%;
   height: 70%;
-  z-index: 2;
+  z-index: 1;
+}
+
+.top-info-container {
+  display: flex;
+  height: 50%;
+  margin-bottom: 10px;
+}
+
+.left-info-container {
+  padding-right: 10px;
+  height: 100%;
+  max-width: 70%;
+  min-width: 30%;
+}
+
+.left-info-container img {
+  width: auto;
+  height: 100%;
+}
+
+.right-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+  font-size: 1.5rem;
+  gap: 10px;
+}
+
+.info-button {
+  width: 120px;
+  height: 50px;
+  background-color: #67151b;
+  color: #fdfbff;
+  border-radius: 9px;
+  font-size: 1.3rem;
+  border: none;
+  cursor: pointer;
+}
+
+.bottom-info-container {
+  display: flex;
+  width: 100%;
+  gap: 5px;
+  height: 50%;
+  overflow-x: scroll;
+}
+
+.bottom-info-container img {
+  width: auto;
+  height: 100%;
 }
 /*Property Info End */
 
