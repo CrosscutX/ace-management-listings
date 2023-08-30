@@ -199,4 +199,8 @@ body {
   font-size: 1rem;
   color: #fdfbff;
 }
+
+.footer-container > a {
+  color: #fdfbff;
+}
 /*Footer End */
