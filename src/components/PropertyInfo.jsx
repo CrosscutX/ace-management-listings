@@ -36,12 +36,12 @@ export default function PropertyInfo(props) {
             <img src={HouseIndoor3} alt="secondary image" />
           </div>
           <div className="right-info-container">
-            <span>Price: </span>
-            <span>Address: </span>
-            <span>Bedrooms: </span>
-            <span>Bathrooms: </span>
-            <span>Laundry: </span>
-            <span>AC: </span>
+            <span>Price: {props.selectedHome["price"]}</span>
+            <span>Address: {props.selectedHome["address"]}</span>
+            <span>Bedrooms: {props.selectedHome["bedrooms"]}</span>
+            <span>Bathrooms: {props.selectedHome["bathrooms"]}</span>
+            <span>Laundry: {props.selectedHome["laundry"]}</span>
+            <span>AC: {props.selectedHome["ac"]}</span>
             <button type="button" className="info-button">
               Apply
             </button>

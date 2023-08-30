@@ -11,7 +11,6 @@ export default function PropertyContainer(props) {
   }
 
   let mapHomes = props.homes.map((home, index) => {
-    console.log(home["mainImage"]["asset"]);
     return (
       <Property
         key={index}
