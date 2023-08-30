@@ -4,8 +4,6 @@ export default function LargeImageContainer(props) {
   let imageContainer = useRef();
   useEffect(() => {
     function imageListener(e) {
-      console.log(imageContainer.current);
-      console.log(e.target);
       if (
         //prevents the .contains from getting an undefined or null value, which will throw errors
         imageContainer.current !== undefined &&

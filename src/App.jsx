@@ -16,8 +16,6 @@ export default function App() {
   const [selectedImage, setSelectedImage] = useState();
   let infoContainer = useRef();
 
-  console.log(selectedHome);
-
   useEffect(() => {
     SanityClient.fetch(`*[_type == "listHome"]`).then((data) => setHomes(data));
   }, []);
