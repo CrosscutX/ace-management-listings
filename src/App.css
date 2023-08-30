@@ -118,7 +118,7 @@ body {
 .property-info {
   position: fixed;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background-color: #e3d3c4;
   /* Centers the info box on the screen. */
   top: 50%;
@@ -132,22 +132,15 @@ body {
   z-index: 1;
 }
 
-.top-info-container {
-  display: flex;
-  height: 50%;
-  margin-bottom: 10px;
-}
-
 .left-info-container {
-  padding-right: 10px;
   height: 100%;
-  max-width: 70%;
-  min-width: 30%;
+  width: 50%;
+  overflow-y: scroll;
 }
 
 .left-info-container img {
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: auto;
 }
 
 .right-info-container {
@@ -156,8 +149,10 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   height: 100%;
+  width: 50%;
   font-size: 1.5rem;
   gap: 10px;
+  padding-left: 10px;
 }
 
 .info-button {
@@ -171,18 +166,6 @@ body {
   cursor: pointer;
 }
 
-.bottom-info-container {
-  display: flex;
-  width: 100%;
-  gap: 5px;
-  height: 50%;
-  overflow-x: scroll;
-}
-
-.bottom-info-container img {
-  width: auto;
-  height: 100%;
-}
 /*Property Info End */
 
 /*Footer Start */

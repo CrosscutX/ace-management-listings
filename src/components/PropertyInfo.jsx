@@ -29,26 +29,22 @@ export default function PropertyInfo(props) {
     <>
       {props.display && (
         <div className="property-info" ref={props.infoContainer}>
-          <div className="top-info-container">
-            <div className="left-info-container">
-              <img src={House} alt="main image" />
-            </div>
-            <div className="right-info-container">
-              <span>Price: </span>
-              <span>Address: </span>
-              <span>Bedrooms: </span>
-              <span>Bathrooms: </span>
-              <span>Laundry: </span>
-              <span>AC: </span>
-              <button type="button" className="info-button">
-                Apply
-              </button>
-            </div>
-          </div>
-          <div className="bottom-info-container">
+          <div className="left-info-container">
+            <img src={House} alt="main image" />
             <img src={HouseIndoor1} alt="secondary image" />
             <img src={HouseIndoor2} alt="secondary image" />
             <img src={HouseIndoor3} alt="secondary image" />
+          </div>
+          <div className="right-info-container">
+            <span>Price: </span>
+            <span>Address: </span>
+            <span>Bedrooms: </span>
+            <span>Bathrooms: </span>
+            <span>Laundry: </span>
+            <span>AC: </span>
+            <button type="button" className="info-button">
+              Apply
+            </button>
           </div>
         </div>
       )}
