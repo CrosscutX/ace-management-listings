@@ -9,7 +9,16 @@ export default function Property(props) {
         onClick={(e) => {
           e.stopPropagation();
           props.selectHome(props.home);
-          props.displayInfo();
+          if (props.display === false) {
+            props.displayInfo(true);
+          } else {
+            props.displayInfo(false);
+          }
+          //Keeps the info panel displayed when clicking a property when the large image is displayed.
+          if (props.showImageContainer === true) {
+            props.setShowImageContainer(false);
+            props.displayInfo(true);
+          }
         }}
       >
         <div className="property-photo-container">
