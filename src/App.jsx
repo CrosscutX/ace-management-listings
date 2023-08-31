@@ -14,6 +14,7 @@ export default function App() {
   const [selectedHome, setSelectedHome] = useState([]);
   const [showImageContainer, setShowImageContainer] = useState(false);
   const [selectedImage, setSelectedImage] = useState();
+  const [dark, setDark] = useState(false);
   let infoContainer = useRef();
 
   useEffect(() => {
@@ -40,9 +41,15 @@ export default function App() {
     setSelectedHome(home);
   }
 
+  if (dark === false) {
+    document.body.style.backgroundColor = "#fdfbff";
+  } else {
+    document.body.style.backgroundColor = "#161a1e";
+  }
+
   return (
     <div className="app">
-      <Hero />
+      <Hero dark={dark} />
       <PropertyInfo
         display={displayInfo}
         infoContainer={infoContainer}
@@ -51,11 +58,14 @@ export default function App() {
         showImageContainer={showImageContainer}
         imageContainerSetter={imageContainerSetter}
         setSelectedImage={setSelectedImage}
+        dark={dark}
+        setDark={setDark}
       />
       {showImageContainer && (
         <LargeImageContainer
           image={selectedImage}
           setShowImageContainer={setShowImageContainer}
+          setDark={setDark}
         />
       )}
 
@@ -66,6 +76,8 @@ export default function App() {
         selectHome={selectedHomeSetter}
         showImageContainer={showImageContainer}
         setShowImageContainer={setShowImageContainer}
+        dark={dark}
+        setDark={setDark}
       />
       <Footer />
     </div>

@@ -10,8 +10,8 @@ export default function LargeImageContainer(props) {
         imageContainer.current !== null
       ) {
         if (!imageContainer.current.contains(e.target)) {
-          console.log("in setwhoimagecontainer");
           props.setShowImageContainer(false);
+          props.setDark(false);
         }
       }
     }

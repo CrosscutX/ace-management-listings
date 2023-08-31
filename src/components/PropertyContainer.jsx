@@ -27,11 +27,18 @@ export default function PropertyContainer(props) {
         selectHome={props.selectHome}
         showImageContainer={props.showImageContainer}
         setShowImageContainer={props.setShowImageContainer}
+        dark={props.dark}
+        setDark={props.setDark}
       />
     );
   });
+
+  let propertyClass = "property-container";
+  if (props.dark === true) {
+    propertyClass += " dark";
+  }
   return (
-    <div className="property-container">
+    <div className={propertyClass}>
       <h2>Available Properties</h2>
       <div className="property-body">{mapHomes}</div>
     </div>

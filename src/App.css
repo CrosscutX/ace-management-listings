@@ -9,6 +9,10 @@ body {
   color: #161a1e;
   background-color: #fdfbff;
 }
+
+.dark {
+  filter: brightness(20%);
+}
 /* Header Start */
 
 /* Header End */
