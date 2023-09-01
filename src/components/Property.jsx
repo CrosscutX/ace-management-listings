@@ -8,8 +8,21 @@ export default function Property(props) {
         className="property-box"
         onClick={(e) => {
           e.stopPropagation();
+          //Selects the home so that property info has the right info to display
           props.selectHome(props.home);
-          props.displayInfo();
+          //Displays or doesn't display info based on if the display state is true or false.
+          if (props.display === false) {
+            props.displayInfo(true);
+          } else {
+            props.displayInfo(false);
+          }
+          //Keeps the info panel displayed when clicking a property when the large image is displayed.
+          //Also removes the dark effect if the same criteria is true.
+          if (props.showImageContainer === true) {
+            props.setShowImageContainer(false);
+            props.displayInfo(true);
+            props.setDark(false);
+          }
         }}
       >
         <div className="property-photo-container">

@@ -9,6 +9,10 @@ body {
   color: #161a1e;
   background-color: #fdfbff;
 }
+
+.dark {
+  filter: brightness(20%);
+}
 /* Header Start */
 
 /* Header End */
@@ -167,6 +171,28 @@ body {
 }
 
 /*Property Info End */
+
+/*LargeImageContainer Start */
+.large-image-container {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  /* Centers the info box on the screen. */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 20px;
+  border-radius: 10px;
+  width: 90%;
+  height: 90%;
+  z-index: 1;
+}
+
+.large-image-container img {
+  width: 100%;
+  height: auto;
+}
+/*LargeImageContainer End */
 
 /*Footer Start */
 .footer {
