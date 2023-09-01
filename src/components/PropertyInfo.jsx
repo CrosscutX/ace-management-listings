@@ -9,9 +9,17 @@ export default function PropertyInfo(props) {
 
   //Makes sure the selected home actually has secondary images attached to it
   if (props.selectedHome["secondaryImages"] != undefined) {
-    secondaryImages = props.selectedHome["secondaryImages"].map((image) => {
-      return <img src={props.urlBuild(image["asset"])} alt="secondary image" />;
-    });
+    secondaryImages = props.selectedHome["secondaryImages"].map(
+      (image, index) => {
+        return (
+          <img
+            src={props.urlBuild(image["asset"])}
+            alt="secondary image"
+            key={index}
+          />
+        );
+      }
+    );
   }
 
   useEffect(() => {
