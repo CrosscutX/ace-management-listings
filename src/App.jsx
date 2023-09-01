@@ -40,7 +40,7 @@ export default function App() {
   function selectedHomeSetter(home) {
     setSelectedHome(home);
   }
-
+  //Changes the background of body whenever large images are displayed
   if (dark === false) {
     document.body.style.backgroundColor = "#fdfbff";
   } else {

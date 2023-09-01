@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Hero(props) {
-  console.log(props.dark);
   let heroClass = "hero";
   if (props.dark === true) {
     heroClass += " dark";
