@@ -6,6 +6,7 @@ import PropertyInfo from "./components/PropertyInfo";
 import LargeImageContainer from "./components/LargeImageContainer";
 import Footer from "./components/Footer";
 import SanityClient from "./client.js";
+import imageUrlBuilder from "@sanity/image-url";
 
 export default function App() {
   const [displayInfo, setDisplayInfo] = useState(false);
@@ -16,6 +17,11 @@ export default function App() {
   const [selectedImage, setSelectedImage] = useState();
   const [dark, setDark] = useState(false);
   let infoContainer = useRef();
+  const builder = imageUrlBuilder(SanityClient);
+
+  function urlFor(source) {
+    return builder.image(source);
+  }
 
   useEffect(() => {
     SanityClient.fetch(`*[_type == "listHome"]`).then((data) => setHomes(data));
@@ -60,6 +66,7 @@ export default function App() {
         setSelectedImage={setSelectedImage}
         dark={dark}
         setDark={setDark}
+        urlBuild={urlFor}
       />
       {showImageContainer && (
         <LargeImageContainer
@@ -78,6 +85,7 @@ export default function App() {
         setShowImageContainer={setShowImageContainer}
         dark={dark}
         setDark={setDark}
+        urlBuild={urlFor}
       />
       <Footer />
     </div>

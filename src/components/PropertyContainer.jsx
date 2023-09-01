@@ -1,15 +1,7 @@
 import React from "react";
 import Property from "./Property";
-import imageUrlBuilder from "@sanity/image-url";
-import client from "../client.js";
 
 export default function PropertyContainer(props) {
-  const builder = imageUrlBuilder(client);
-
-  function urlFor(source) {
-    return builder.image(source);
-  }
-
   let mapHomes = props.homes.map((home, index) => {
     return (
       <Property
@@ -23,7 +15,7 @@ export default function PropertyContainer(props) {
         bathrooms={home["bathrooms"]}
         squareFeet={home["sqft"]}
         address={home["address"]}
-        mainImage={urlFor(home["mainImage"]["asset"])}
+        mainImage={props.urlBuild(home["mainImage"]["asset"])}
         selectHome={props.selectHome}
         showImageContainer={props.showImageContainer}
         setShowImageContainer={props.setShowImageContainer}
