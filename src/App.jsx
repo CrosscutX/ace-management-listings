@@ -4,12 +4,13 @@ import Hero from "./components/Hero";
 import PropertyContainer from "./components/PropertyContainer";
 import PropertyInfo from "./components/PropertyInfo";
 import LargeImageContainer from "./components/LargeImageContainer";
+import Application from "./components/Application";
 import Footer from "./components/Footer";
 import SanityClient from "./client.js";
 
 export default function App() {
   const [displayInfo, setDisplayInfo] = useState(false);
-  const [displayApp, setDisplayApp] = useState(false);
+  const [displayApp, setDisplayApp] = useState(true);
   const [homes, setHomes] = useState([]);
   const [selectedHome, setSelectedHome] = useState([]);
   const [showImageContainer, setShowImageContainer] = useState(false);
@@ -47,39 +48,53 @@ export default function App() {
     document.body.style.backgroundColor = "#161a1e";
   }
 
-  return (
-    <div className="app">
-      <Hero dark={dark} />
-      <PropertyInfo
-        display={displayInfo}
-        infoContainer={infoContainer}
-        displayInfo={setDisplayInfo}
-        selectedHome={selectedHome}
-        showImageContainer={showImageContainer}
-        imageContainerSetter={imageContainerSetter}
-        setSelectedImage={setSelectedImage}
-        dark={dark}
-        setDark={setDark}
-      />
-      {showImageContainer && (
-        <LargeImageContainer
-          image={selectedImage}
-          setShowImageContainer={setShowImageContainer}
-          setDark={setDark}
-        />
-      )}
+  if (displayApp === true) {
+    document.body.style.backgroundColor = "#E8AA9B";
+  } else {
+    document.body.style.backgroundColor = "#161a1e";
+  }
 
-      <PropertyContainer
-        displayInfo={setDisplayInfo}
-        display={displayInfo}
-        homes={homes}
-        selectHome={selectedHomeSetter}
-        showImageContainer={showImageContainer}
-        setShowImageContainer={setShowImageContainer}
-        dark={dark}
-        setDark={setDark}
-      />
-      <Footer />
+  return (
+    <div className="app-container">
+      {!displayApp && (
+        <div className="app">
+          <Hero dark={dark} />
+          <PropertyInfo
+            display={displayInfo}
+            infoContainer={infoContainer}
+            displayInfo={setDisplayInfo}
+            selectedHome={selectedHome}
+            showImageContainer={showImageContainer}
+            imageContainerSetter={imageContainerSetter}
+            setSelectedImage={setSelectedImage}
+            dark={dark}
+            setDark={setDark}
+          />
+          {showImageContainer && (
+            <LargeImageContainer
+              image={selectedImage}
+              setShowImageContainer={setShowImageContainer}
+              setDark={setDark}
+            />
+          )}
+          <PropertyContainer
+            displayInfo={setDisplayInfo}
+            display={displayInfo}
+            homes={homes}
+            selectHome={selectedHomeSetter}
+            showImageContainer={showImageContainer}
+            setShowImageContainer={setShowImageContainer}
+            dark={dark}
+            setDark={setDark}
+          />
+          <Footer />
+        </div>
+      )}
+      {displayApp && (
+        <div className="form">
+          <Application />
+        </div>
+      )}
     </div>
   );
 }
