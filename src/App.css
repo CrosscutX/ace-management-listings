@@ -254,7 +254,8 @@ body {
 
 input.checkbox {
   margin-left: 20px;
-  width: 50px;
+  width: 30px;
+  min-width: 30px;
 }
 
 .form-header {
@@ -293,12 +294,13 @@ select {
 
 .authorization-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding-bottom: 20px;
 }
 
 .final-checkbox-container {
-  width: 30%;
+  width: 100%;
 }
 
 .final-checkbox-container .final-checkbox {

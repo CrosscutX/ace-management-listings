@@ -208,7 +208,7 @@ export default function Application() {
 
           <div className="form-item">
             <label htmlFor="income">Income:</label>
-            <input type="number" name="income" id="icome" />
+            <input type="number" name="income" id="income" />
           </div>
 
           <div className="form-item form-checkbox">
@@ -228,7 +228,9 @@ export default function Application() {
           </div>
 
           <div className="form-item">
-            <label htmlFor="">Household Occupants</label>
+            <label htmlFor="other-household-occupants">
+              Other Household Occupants
+            </label>
           </div>
 
           <div className="form-item form-checkbox">
@@ -249,18 +251,18 @@ export default function Application() {
           </div>
 
           <div className="form-item">
-            <label htmlFor="">Car Payment:</label>
+            <label htmlFor="car-payment">Car Payment:</label>
             <input type="number" name="car-payment" id="car-payment" />
           </div>
 
           <div className="form-item">
-            <label htmlFor="">Credit Card Payment:</label>
+            <label htmlFor="card-payment">Credit Card Payment:</label>
             <input type="number" name="card-payment" id="card-payment" />
           </div>
 
           <div className="form-item">
-            <label htmlFor="">Other Payments:</label>
-            <input type="number" name="card-payment" id="card-payment" />
+            <label htmlFor="other-payment">Other Payments:</label>
+            <input type="number" name="other-payment" id="other-payment" />
           </div>
 
           <div className="authorization-container">
@@ -276,7 +278,13 @@ export default function Application() {
             </p>
 
             <div className="final-checkbox-container">
-              <input type="checkbox" className="final-checkbox" required />
+              <input
+                type="checkbox"
+                className="final-checkbox"
+                name="authorization"
+                id="authorizatoin"
+                required
+              />
             </div>
           </div>
 
