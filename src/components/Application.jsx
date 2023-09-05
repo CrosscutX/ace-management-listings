@@ -1,6 +1,25 @@
-import React from "react";
+import { useState } from "react";
 
 export default function Application() {
+  const [felony, setFelony] = useState(false);
+  const [pets, setPets] = useState(false);
+
+  function felonySetter() {
+    if (felony === true) {
+      setFelony(false);
+    } else {
+      setFelony(true);
+    }
+  }
+
+  function petSetter() {
+    if (pets === true) {
+      setPets(false);
+    } else {
+      setPets(true);
+    }
+  }
+
   return (
     <div className="application">
       <h1>Ace Management Property Application</h1>
@@ -64,14 +83,23 @@ export default function Application() {
             />
           </div>
 
-          <div className="form-item form-checkbox">
-            <label htmlFor="felony">Convincted of a felony?</label>
-            <input
-              type="checkbox"
-              name="felony"
-              id="felony"
-              className="checkbox"
-            />
+          <div className="form-item">
+            <div className="felony-container">
+              <label htmlFor="felony">Convincted of a felony?</label>
+              <input
+                type="checkbox"
+                name="felony"
+                id="felony"
+                className="checkbox"
+                onClick={felonySetter}
+              />
+            </div>
+            {felony && (
+              <div className="county-container">
+                <label htmlFor="county">What County?</label>
+                <input type="text" name="county" id="county" />
+              </div>
+            )}
           </div>
 
           <div className="form-item form-checkbox">
@@ -114,6 +142,7 @@ export default function Application() {
               name="present-address-rent"
               id="present-address-rent"
               step="100"
+              className="number-input"
             />
           </div>
 
@@ -228,14 +257,110 @@ export default function Application() {
           </div>
 
           <div className="form-item">
-            <label htmlFor="other-household-occupants">
+            <span className="other-occupants-header">
               Other Household Occupants
-            </label>
+            </span>
+            <div className="other-household-occupants">
+              <div className="household-occupants-name-container">
+                <label htmlFor="other-household-occupant-name1">Name:</label>
+                <input
+                  type="text"
+                  name="other-household-occupant-name1"
+                  id="other-household-occupant-name1"
+                  className="other-occupant-name"
+                />
+                <label htmlFor="other-household-occupant-name2">Name:</label>
+                <input
+                  type="text"
+                  name="other-household-occupant-name2"
+                  id="other-household-occupant-name2"
+                  className="other-occupant-name"
+                />
+                <label htmlFor="other-household-occupant-name3">Name:</label>
+                <input
+                  type="text"
+                  name="other-household-occupant-name3"
+                  id="other-household-occupant-name3"
+                  className="other-occupant-name"
+                />
+                <label htmlFor="other-household-occupant-name4">Name:</label>
+                <input
+                  type="text"
+                  name="other-household-occupant-name4"
+                  id="other-household-occupant-name4"
+                  className="other-occupant-name"
+                />
+                <label htmlFor="other-household-occupant-name5">Name:</label>
+                <input
+                  type="text"
+                  name="other-household-occupant-name5"
+                  id="other-household-occupant-name5"
+                  className="other-occupant-name"
+                />
+              </div>
+              <div className="household-occupants-dob-container">
+                <label htmlFor="other-household-occupant-dob1">Date:</label>
+                <input
+                  type="date"
+                  name="other-household-occupant-dob1"
+                  id="other-household-occupant-dob1"
+                  className="other-occupant-dob"
+                />
+                <label htmlFor="other-household-occupant-dob2">Date:</label>
+                <input
+                  type="date"
+                  name="other-household-occupant-dob2"
+                  id="other-household-occupant-dob2"
+                  className="other-occupant-dob"
+                />
+                <label htmlFor="other-household-occupant-dob3">Date:</label>
+                <input
+                  type="date"
+                  name="other-household-occupant-dob3"
+                  id="other-household-occupant-dob3"
+                  className="other-occupant-dob"
+                />
+                <label htmlFor="other-household-occupant-dob4">Date:</label>
+                <input
+                  type="date"
+                  name="other-household-occupant-dob4"
+                  id="other-household-occupant-dob4"
+                  className="other-occupant-dob"
+                />
+                <label htmlFor="other-household-occupant-dob5">Date:</label>
+                <input
+                  type="date"
+                  name="other-household-occupant-dob5"
+                  id="other-household-occupant-dob5"
+                  className="other-occupant-dob"
+                />
+              </div>
+            </div>
           </div>
 
-          <div className="form-item form-checkbox">
-            <label htmlFor="pets">Do you have pets?</label>
-            <input type="checkbox" name="pets" id="pets" className="checkbox" />
+          <div className="form-item">
+            <div className="pet-container">
+              <label htmlFor="pets">Do you have pets?</label>
+              <input
+                type="checkbox"
+                name="pets"
+                id="pets"
+                className="checkbox"
+                onClick={petSetter}
+              />
+            </div>
+            {pets && (
+              <div className="pet-type-container">
+                <label htmlFor="pet-type">What Kind?</label>
+                <input type="text" name="pet-type" id="pet-type" />
+              </div>
+            )}
+            {pets && (
+              <div className="pet-amount-container">
+                <label htmlFor="pet-amount">How Many?</label>
+                <input type="text" id="pet-amount" name="pet-amount" />
+              </div>
+            )}
           </div>
 
           <div className="form-item form-checkbox">
