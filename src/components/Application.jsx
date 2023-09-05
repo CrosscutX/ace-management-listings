@@ -68,8 +68,14 @@ export default function Application() {
           </div>
 
           <div className="form-item">
-            <label htmlFor="tel">Number:</label>
-            <input type="tel" id="tel" name="tel" required autoComplete="tel" />
+            <label htmlFor="number">Number:</label>
+            <input
+              type="tel"
+              id="number"
+              name="number"
+              required
+              autoComplete="tel"
+            />
           </div>
 
           <div className="form-item">
