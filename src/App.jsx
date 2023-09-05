@@ -11,7 +11,7 @@ import imageUrlBuilder from "@sanity/image-url";
 
 export default function App() {
   const [displayInfo, setDisplayInfo] = useState(false);
-  const [displayApp, setDisplayApp] = useState(true);
+  const [displayApp, setDisplayApp] = useState(false);
   const [homes, setHomes] = useState([]);
   const [selectedHome, setSelectedHome] = useState([]);
   const [showImageContainer, setShowImageContainer] = useState(false);
@@ -48,6 +48,7 @@ export default function App() {
     setSelectedHome(home);
   }
   //Changes the background of body whenever large images are displayed
+
   if (dark === false) {
     document.body.style.backgroundColor = "#fdfbff";
   } else {
@@ -56,8 +57,8 @@ export default function App() {
 
   if (displayApp === true) {
     document.body.style.backgroundColor = "#E8AA9B";
-  } else {
-    document.body.style.backgroundColor = "#161a1e";
+  } else if (displayApp === false && dark === false) {
+    document.body.style.backgroundColor = "#fdfbff";
   }
 
   return (
