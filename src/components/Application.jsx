@@ -42,7 +42,6 @@ export default function Application() {
               id="form-property"
               name="form-property"
               readOnly
-              required
             />
           </div>
 
