@@ -96,6 +96,7 @@ export default function Application() {
                 name="felony"
                 id="felony"
                 className="checkbox"
+                value="Is a felon"
                 onClick={felonySetter}
               />
             </div>
@@ -114,6 +115,7 @@ export default function Application() {
               name="sex-offender"
               id="sex-offender"
               className="checkbox"
+              value="Is a sex offender"
             />
           </div>
 
@@ -254,6 +256,7 @@ export default function Application() {
               name="proof-of-income"
               id="proof-of-income"
               className="checkbox"
+              value="Can provide proof of income"
             />
           </div>
 
@@ -351,6 +354,7 @@ export default function Application() {
                 name="pets"
                 id="pets"
                 className="checkbox"
+                value="Does have pets"
                 onClick={petSetter}
               />
             </div>
@@ -376,6 +380,7 @@ export default function Application() {
               type="checkbox"
               name="amount-needed-to-move-in"
               id="amount-needed-to-move-in"
+              value="Does have amount to move in"
               className="checkbox"
             />
           </div>
@@ -413,6 +418,7 @@ export default function Application() {
                 className="final-checkbox"
                 name="authorization"
                 id="authorization"
+                value="Authorization Confirmation"
                 required
               />
             </div>
