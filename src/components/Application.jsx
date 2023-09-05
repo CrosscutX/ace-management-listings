@@ -364,7 +364,7 @@ export default function Application() {
             {pets && (
               <div className="pet-amount-container">
                 <label htmlFor="pet-amount">How Many?</label>
-                <input type="text" id="pet-amount" name="pet-amount" />
+                <input type="number" id="pet-amount" name="pet-amount" />
               </div>
             )}
           </div>
@@ -413,7 +413,7 @@ export default function Application() {
                 type="checkbox"
                 className="final-checkbox"
                 name="authorization"
-                id="authorizatoin"
+                id="authorization"
                 required
               />
             </div>

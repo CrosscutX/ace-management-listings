@@ -310,9 +310,13 @@ input[type="tel"] {
   margin-top: 10px;
 }
 
-.pet-type-container input,
-.pet-amount-container input {
+.pet-type-container input {
   margin-top: 10px;
+}
+
+.pet-amount-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .other-occupants-header {
