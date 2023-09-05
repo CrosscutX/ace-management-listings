@@ -5,6 +5,23 @@ import HouseIndoor2 from "../assets/houseIndoor2.jpg";
 import HouseIndoor3 from "../assets/houseIndoor3.jpg";
 
 export default function PropertyInfo(props) {
+  let secondaryImages = [];
+
+  //Makes sure the selected home actually has secondary images attached to it
+  if (props.selectedHome["secondaryImages"] != undefined) {
+    secondaryImages = props.selectedHome["secondaryImages"].map(
+      (image, index) => {
+        return (
+          <img
+            src={props.urlBuild(image["asset"])}
+            alt="secondary image"
+            key={index}
+          />
+        );
+      }
+    );
+  }
+
   useEffect(() => {
     function propertyInfoListener(e) {
       if (
@@ -32,7 +49,7 @@ export default function PropertyInfo(props) {
         <div className="property-info" ref={props.infoContainer}>
           <div className="left-info-container">
             <img
-              src={House}
+              src={props.urlBuild(props.selectedHome["mainImage"])}
               alt="main image"
               onClick={(e) => {
                 e.stopPropagation();
@@ -42,18 +59,16 @@ export default function PropertyInfo(props) {
                 props.setDark(true);
               }}
             />
-            <img src={HouseIndoor1} alt="secondary image" />
-            <img src={HouseIndoor2} alt="secondary image" />
-            <img src={HouseIndoor3} alt="secondary image" />
+            {secondaryImages}
           </div>
 
           <div className="right-info-container">
-            <span>Price: </span>
-            <span>Address: </span>
-            <span>Bedrooms: </span>
-            <span>Bathrooms: </span>
-            <span>Laundry: </span>
-            <span>AC: </span>
+            <span>Price: {props.selectedHome["price"]}</span>
+            <span>Address: {props.selectedHome["address"]}</span>
+            <span>Bedrooms: {props.selectedHome["bedrooms"]}</span>
+            <span>Bathrooms: {props.selectedHome["bathrooms"]}</span>
+            <span>Laundry: {props.selectedHome["laundry"]}</span>
+            <span>AC: {props.selectedHome["ac"]}</span>
             <button type="button" className="info-button">
               Apply
             </button>
