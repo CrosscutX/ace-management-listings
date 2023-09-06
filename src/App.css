@@ -10,6 +10,10 @@ body {
   background-color: #fdfbff;
 }
 
+html {
+  scrollbar-color: #67151b #e8aa9b;
+}
+
 .dark {
   filter: brightness(20%);
 }
@@ -140,6 +144,8 @@ body {
   height: 100%;
   width: 50%;
   overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #67151b #e8aa9b;
 }
 
 .left-info-container img {

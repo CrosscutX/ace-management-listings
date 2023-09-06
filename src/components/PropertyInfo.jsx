@@ -21,6 +21,14 @@ export default function PropertyInfo(props) {
     );
   }
 
+  function booleanCheck(value) {
+    if (value == false) {
+      return "No";
+    } else {
+      return "Yes";
+    }
+  }
+
   useEffect(() => {
     function propertyInfoListener(e) {
       if (
@@ -70,8 +78,8 @@ export default function PropertyInfo(props) {
             <span>Address: {props.selectedHome["address"]}</span>
             <span>Bedrooms: {props.selectedHome["bedrooms"]}</span>
             <span>Bathrooms: {props.selectedHome["bathrooms"]}</span>
-            <span>Laundry: {props.selectedHome["laundry"]}</span>
-            <span>AC: {props.selectedHome["ac"]}</span>
+            <span>Laundry: {booleanCheck(props.selectedHome["laundry"])}</span>
+            <span>AC: {booleanCheck(props.selectedHome["ac"])}</span>
             <button
               type="button"
               className="info-button"
