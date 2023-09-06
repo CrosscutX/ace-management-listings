@@ -37,20 +37,15 @@ export default function App() {
     }
   }
 
-  function displayAppSetter() {
-    if (displayApp === true) {
-      setDisplayApp(false);
-    } else {
-      setDisplayApp(true);
-    }
-  }
-
   function selectedHomeSetter(home) {
     setSelectedHome(home);
   }
-
+  //Select the adderess for the application page
   function selectedAddressSetter(address) {
     setSelectedAddress(address);
+    //A little snippet of code that forces the screen to scroll to the top whenever
+    //apply is hit.
+    document.documentElement.scrollTop = 0;
   }
   //Changes the background of body whenever large images are displayed
 

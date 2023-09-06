@@ -55,7 +55,11 @@ export default function PropertyInfo(props) {
                 const currentHouse = e.target.src;
                 props.setSelectedImage(currentHouse);
                 props.imageContainerSetter();
-                props.setDark(true);
+                if (props.dark === true) {
+                  props.setDark(false);
+                } else {
+                  props.setDark(true);
+                }
               }}
             />
             {secondaryImages}

@@ -197,6 +197,14 @@ body {
   width: 100%;
   height: auto;
 }
+
+.exit-button {
+  font-size: 3rem;
+  color: #fdfbff;
+  cursor: pointer;
+  user-select: none;
+  margin-right: 20px;
+}
 /*LargeImageContainer End */
 
 /*Footer Start */
@@ -389,5 +397,15 @@ input.submit-button {
 .submit-button:hover {
   background-color: rgb(52, 52, 192);
   cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .application-container {
+    width: 100%;
+  }
+
+  input {
+    font-size: 1rem;
+  }
 }
 /*Application End*/

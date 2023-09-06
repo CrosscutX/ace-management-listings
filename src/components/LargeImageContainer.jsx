@@ -23,8 +23,9 @@ export default function LargeImageContainer(props) {
   });
 
   return (
-    <div className="large-image-container" ref={imageContainer}>
-      <img src={props.image} alt="Big Image" />
+    <div className="large-image-container">
+      <span className="exit-button">X</span>
+      <img src={props.image} alt="Big Image" ref={imageContainer} />
     </div>
   );
 }
