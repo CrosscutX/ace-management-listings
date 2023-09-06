@@ -14,6 +14,7 @@ export default function App() {
   const [displayApp, setDisplayApp] = useState(false);
   const [homes, setHomes] = useState([]);
   const [selectedHome, setSelectedHome] = useState([]);
+  const [selectedAddress, setSelectedAddress] = useState([]);
   const [showImageContainer, setShowImageContainer] = useState(false);
   const [selectedImage, setSelectedImage] = useState();
   const [dark, setDark] = useState(false);
@@ -47,6 +48,8 @@ export default function App() {
   function selectedHomeSetter(home) {
     setSelectedHome(home);
   }
+
+  function selectedAddressSetter(address) {}
   //Changes the background of body whenever large images are displayed
 
   if (dark === false) {
@@ -77,6 +80,8 @@ export default function App() {
             dark={dark}
             setDark={setDark}
             urlBuild={urlFor}
+            setSelectedAddress={setSelectedAddress}
+            setDisplayApp={setDisplayApp}
           />
           {showImageContainer && (
             <LargeImageContainer
@@ -101,7 +106,7 @@ export default function App() {
       )}
       {displayApp && (
         <div className="form">
-          <Application />
+          <Application selectedAddress={selectedAddress} />
         </div>
       )}
     </div>

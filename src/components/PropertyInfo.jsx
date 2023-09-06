@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
-import House from "../assets/houses.jpg";
-import HouseIndoor1 from "../assets/houseIndoor1.jpg";
-import HouseIndoor2 from "../assets/houseIndoor2.jpg";
-import HouseIndoor3 from "../assets/houseIndoor3.jpg";
+import { useEffect } from "react";
 
 export default function PropertyInfo(props) {
   let secondaryImages = [];
-
+  let propertyInfo = "property-info";
+  if (props.dark === true) {
+    propertyInfo += " dark";
+  }
   //Makes sure the selected home actually has secondary images attached to it
   if (props.selectedHome["secondaryImages"] != undefined) {
     secondaryImages = props.selectedHome["secondaryImages"].map(
@@ -46,7 +45,7 @@ export default function PropertyInfo(props) {
   return (
     <>
       {props.display && (
-        <div className="property-info" ref={props.infoContainer}>
+        <div className={propertyInfo} ref={props.infoContainer}>
           <div className="left-info-container">
             <img
               src={props.urlBuild(props.selectedHome["mainImage"])}
@@ -69,7 +68,13 @@ export default function PropertyInfo(props) {
             <span>Bathrooms: {props.selectedHome["bathrooms"]}</span>
             <span>Laundry: {props.selectedHome["laundry"]}</span>
             <span>AC: {props.selectedHome["ac"]}</span>
-            <button type="button" className="info-button">
+            <button
+              type="button"
+              className="info-button"
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
               Apply
             </button>
           </div>

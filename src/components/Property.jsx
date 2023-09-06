@@ -1,5 +1,4 @@
 import React from "react";
-import House from "../assets/houses.jpg";
 
 export default function Property(props) {
   return (
@@ -8,20 +7,21 @@ export default function Property(props) {
         className="property-box"
         onClick={(e) => {
           e.stopPropagation();
-          //Selects the home so that property info has the right info to display
-          props.selectHome(props.home);
-          //Displays or doesn't display info based on if the display state is true or false.
-          if (props.display === false) {
-            props.displayInfo(true);
-          } else {
-            props.displayInfo(false);
-          }
-          //Keeps the info panel displayed when clicking a property when the large image is displayed.
-          //Also removes the dark effect if the same criteria is true.
           if (props.showImageContainer === true) {
+            //Keeps the info panel displayed when clicking a property when the large image is displayed.
+            //Also removes the dark effect if the same criteria is true.
             props.setShowImageContainer(false);
             props.displayInfo(true);
             props.setDark(false);
+          } else {
+            //Selects the home so that property info has the right info to display
+            props.selectHome(props.home);
+            //Displays or doesn't display info based on if the display state is true or false.
+            if (props.display === false) {
+              props.displayInfo(true);
+            } else {
+              props.displayInfo(false);
+            }
           }
         }}
       >
