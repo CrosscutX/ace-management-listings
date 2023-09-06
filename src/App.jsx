@@ -29,8 +29,6 @@ export default function App() {
     SanityClient.fetch(`*[_type == "listHome"]`).then((data) => setHomes(data));
   }, []);
 
-  console.log(homes);
-
   function imageContainerSetter() {
     if (showImageContainer === true) {
       setShowImageContainer(false);
