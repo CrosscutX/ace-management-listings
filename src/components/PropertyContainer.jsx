@@ -21,6 +21,8 @@ export default function PropertyContainer(props) {
         setShowImageContainer={props.setShowImageContainer}
         dark={props.dark}
         setDark={props.setDark}
+        setDisplayApp={props.setDisplayApp}
+        selectedAddressSetter={props.selectedAddressSetter}
       />
     );
   });

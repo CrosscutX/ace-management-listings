@@ -37,7 +37,15 @@ export default function Property(props) {
             <span className="square-feet"> {props.squareFeet} sqft</span>
           </div>
           <span className="address">{props.address}</span>
-          <button type="button" className="apply-button">
+          <button
+            type="button"
+            className="apply-button"
+            onClick={(e) => {
+              e.stopPropagation();
+              props.setDisplayApp(true);
+              props.selectedAddressSetter(props.address);
+            }}
+          >
             Apply
           </button>
         </div>

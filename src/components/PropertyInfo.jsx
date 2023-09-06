@@ -73,6 +73,8 @@ export default function PropertyInfo(props) {
               className="info-button"
               onClick={(e) => {
                 e.stopPropagation();
+                props.setDisplayApp(true);
+                props.selectedAddressSetter(props.selectedHome["address"]);
               }}
             >
               Apply

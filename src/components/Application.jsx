@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Application() {
+export default function Application(props) {
   const [felony, setFelony] = useState(false);
   const [pets, setPets] = useState(false);
 
@@ -41,7 +41,9 @@ export default function Application() {
               type="text"
               id="form-property"
               name="form-property"
+              value={props.selectedAddress}
               readOnly
+              required
             />
           </div>
 

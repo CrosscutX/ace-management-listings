@@ -49,7 +49,9 @@ export default function App() {
     setSelectedHome(home);
   }
 
-  function selectedAddressSetter(address) {}
+  function selectedAddressSetter(address) {
+    setSelectedAddress(address);
+  }
   //Changes the background of body whenever large images are displayed
 
   if (dark === false) {
@@ -82,6 +84,7 @@ export default function App() {
             urlBuild={urlFor}
             setSelectedAddress={setSelectedAddress}
             setDisplayApp={setDisplayApp}
+            selectedAddressSetter={selectedAddressSetter}
           />
           {showImageContainer && (
             <LargeImageContainer
@@ -100,6 +103,8 @@ export default function App() {
             dark={dark}
             setDark={setDark}
             urlBuild={urlFor}
+            setDisplayApp={setDisplayApp}
+            selectedAddressSetter={selectedAddressSetter}
           />
           <Footer />
         </div>
