@@ -124,17 +124,22 @@ export default function PropertyInfo(props) {
               <span className="highlight">Garage:</span>{" "}
               {booleanCheck(props.selectedHome["garage"])}
             </span>
-            <button
-              type="button"
-              className="info-button"
-              onClick={(e) => {
-                e.stopPropagation();
-                props.setDisplayApp(true);
-                props.selectedAddressSetter(props.selectedHome["address"]);
-              }}
-            >
-              Apply
-            </button>
+            <div className="button-container">
+              <button
+                type="button"
+                className="info-button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  props.setDisplayApp(true);
+                  props.selectedAddressSetter(props.selectedHome["address"]);
+                }}
+              >
+                Apply
+              </button>
+              <button type="button" className="info-button">
+                Exit
+              </button>
+            </div>
           </div>
         </div>
       )}
