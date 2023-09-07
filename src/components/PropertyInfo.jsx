@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function PropertyInfo(props) {
+  const [isImageDisabled, setIsImageDisabled] = useState(false);
   let secondaryImages = [];
   let propertyInfo = "property-info";
   if (props.dark === true) {
@@ -16,14 +17,18 @@ export default function PropertyInfo(props) {
             alt="secondary image"
             key={index}
             onClick={(e) => {
-              e.stopPropagation();
-              const currentHouse = e.target.src;
-              props.setSelectedImage(currentHouse);
-              props.imageContainerSetter();
-              if (props.dark === true) {
-                props.setDark(false);
+              if (isImageDisabled === false) {
+                e.stopPropagation();
+                const currentHouse = e.target.src;
+                props.setSelectedImage(currentHouse);
+                props.imageContainerSetter();
+                if (props.dark === true) {
+                  props.setDark(false);
+                } else {
+                  props.setDark(true);
+                }
               } else {
-                props.setDark(true);
+                return;
               }
             }}
           />
@@ -68,6 +73,25 @@ export default function PropertyInfo(props) {
       document.removeEventListener("click", propertyInfoListener);
     };
   });
+  //Logic for checking the screen size and stopping the user from clicking on
+  //images when the screen gets too small.
+  //This is a mobile fix as the large image functionality is pretty useless
+  //on mobile.
+  function checkScreenSize() {
+    if (window.innerWidth <= 750) {
+      setIsImageDisabled(true);
+    } else {
+      setIsImageDisabled(false);
+    }
+  }
+
+  useEffect(() => {
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
 
   return (
     <>
@@ -78,14 +102,19 @@ export default function PropertyInfo(props) {
               src={props.urlBuild(props.selectedHome["mainImage"])}
               alt="main image"
               onClick={(e) => {
-                e.stopPropagation();
-                const currentHouse = e.target.src;
-                props.setSelectedImage(currentHouse);
-                props.imageContainerSetter();
-                if (props.dark === true) {
-                  props.setDark(false);
+                //Diables image click on mobile.
+                if (isImageDisabled === false) {
+                  e.stopPropagation();
+                  const currentHouse = e.target.src;
+                  props.setSelectedImage(currentHouse);
+                  props.imageContainerSetter();
+                  if (props.dark === true) {
+                    props.setDark(false);
+                  } else {
+                    props.setDark(true);
+                  }
                 } else {
-                  props.setDark(true);
+                  return;
                 }
               }}
             />
@@ -136,7 +165,13 @@ export default function PropertyInfo(props) {
               >
                 Apply
               </button>
-              <button type="button" className="info-button">
+              <button
+                type="button"
+                className="info-button"
+                onClick={() => {
+                  props.displayInfo(false);
+                }}
+              >
                 Exit
               </button>
             </div>
