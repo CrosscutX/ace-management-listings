@@ -69,7 +69,7 @@ export default function Application(props) {
           </div>
 
           <div className="form-item">
-            <label htmlFor="number">Number:</label>
+            <label htmlFor="number">Phone Number:</label>
             <input
               type="tel"
               id="number"
