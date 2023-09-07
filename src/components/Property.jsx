@@ -32,8 +32,8 @@ export default function Property(props) {
           <span className="price">${props.price}</span>
           <span className="sales-type">{props.rentOrOwn}</span>
           <div className="property-size">
-            <span className="bedrooms">{props.bedrooms} bds |</span>
-            <div className="bathrooms">{props.bathrooms} bas |</div>
+            <span className="bedrooms">{props.bedrooms} bd |</span>
+            <div className="bathrooms">{props.bathrooms} ba |</div>
             <span className="square-feet"> {props.squareFeet} sqft</span>
           </div>
           <span className="address">{props.address}</span>

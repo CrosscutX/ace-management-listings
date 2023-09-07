@@ -40,6 +40,14 @@ export default function PropertyInfo(props) {
     }
   }
 
+  function rentOrSellCheck(value) {
+    if (value === true) {
+      return "sale";
+    } else {
+      return "rent";
+    }
+  }
+
   useEffect(() => {
     function propertyInfoListener(e) {
       if (
@@ -60,8 +68,6 @@ export default function PropertyInfo(props) {
       document.removeEventListener("click", propertyInfoListener);
     };
   });
-
-  console.log(props.selectedHome);
 
   return (
     <>
@@ -87,13 +93,37 @@ export default function PropertyInfo(props) {
           </div>
 
           <div className="right-info-container">
-            <span>Price: {props.selectedHome["price"]}</span>
-            <span>Address: {props.selectedHome["address"]}</span>
-            <span>Bedrooms: {props.selectedHome["bedrooms"]}</span>
-            <span>Bathrooms: {props.selectedHome["bathrooms"]}</span>
-            <span>Laundry: {booleanCheck(props.selectedHome["laundry"])}</span>
-            <span>AC: {booleanCheck(props.selectedHome["ac"])}</span>
-            <span>Garage: {booleanCheck(props.selectedHome["garage"])}</span>
+            <span className="highlight">
+              Property for {rentOrSellCheck(props.selectedHome["rentOrOwn"])}
+            </span>
+            <span>
+              <span className="highlight">Price:</span>{" "}
+              {props.selectedHome["price"]}
+            </span>
+            <span>
+              <span className="highlight">Address:</span>{" "}
+              {props.selectedHome["address"]}
+            </span>
+            <span>
+              <span className="highlight">Bedrooms:</span>{" "}
+              {props.selectedHome["bedrooms"]}
+            </span>
+            <span>
+              <span className="highlight">Bathrooms:</span>{" "}
+              {props.selectedHome["bathrooms"]}
+            </span>
+            <span>
+              <span className="highlight">Laundry:</span>{" "}
+              {booleanCheck(props.selectedHome["laundry"])}
+            </span>
+            <span>
+              <span className="highlight">AC:</span>{" "}
+              {booleanCheck(props.selectedHome["ac"])}
+            </span>
+            <span>
+              <span className="highlight">Garage:</span>{" "}
+              {booleanCheck(props.selectedHome["garage"])}
+            </span>
             <button
               type="button"
               className="info-button"
