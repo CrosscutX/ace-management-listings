@@ -15,6 +15,17 @@ export default function PropertyInfo(props) {
             src={props.urlBuild(image["asset"])}
             alt="secondary image"
             key={index}
+            onClick={(e) => {
+              e.stopPropagation();
+              const currentHouse = e.target.src;
+              props.setSelectedImage(currentHouse);
+              props.imageContainerSetter();
+              if (props.dark === true) {
+                props.setDark(false);
+              } else {
+                props.setDark(true);
+              }
+            }}
           />
         );
       }
@@ -50,6 +61,8 @@ export default function PropertyInfo(props) {
     };
   });
 
+  console.log(props.selectedHome);
+
   return (
     <>
       {props.display && (
@@ -80,6 +93,7 @@ export default function PropertyInfo(props) {
             <span>Bathrooms: {props.selectedHome["bathrooms"]}</span>
             <span>Laundry: {booleanCheck(props.selectedHome["laundry"])}</span>
             <span>AC: {booleanCheck(props.selectedHome["ac"])}</span>
+            <span>Garage: {booleanCheck(props.selectedHome["garage"])}</span>
             <button
               type="button"
               className="info-button"
