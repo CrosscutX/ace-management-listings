@@ -106,7 +106,10 @@ export default function App() {
       )}
       {displayApp && (
         <div className="form">
-          <Application selectedAddress={selectedAddress} />
+          <Application
+            selectedAddress={selectedAddress}
+            setDisplayApp={setDisplayApp}
+          />
         </div>
       )}
     </div>

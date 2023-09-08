@@ -23,7 +23,14 @@ export default function Application(props) {
   return (
     <div className="application">
       <h1>Ace Management Property Application</h1>
-      <input type="button" className="return-button" value="Return" />
+      <input
+        type="button"
+        className="return-button"
+        value="Return"
+        onClick={() => {
+          props.setDisplayApp(false);
+        }}
+      />
       <div className="application-container">
         <form
           className="contact-form"

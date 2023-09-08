@@ -264,6 +264,7 @@ img {
   cursor: pointer;
   padding-left: 10px;
   user-select: none;
+  height: 10%;
 }
 
 .exit-button:hover {
