@@ -28,8 +28,10 @@ img {
 .hero {
   display: flex;
   justify-content: center;
-  background-image: url("./assets/ace-house.jpg");
-  background-position: 80% 30%;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("./assets/ace-house.jpg");
+  background-position: center;
+  background-size: cover;
   align-items: center;
   height: 90vh;
   color: #fdfbff;
@@ -496,3 +498,11 @@ input.submit-button {
   }
 }
 /*Application End*/
+/*Animation Start*/
+.exit-button,
+.info-button,
+.apply-button,
+.return-button {
+  transition: 250ms;
+}
+/*Animation End*/
