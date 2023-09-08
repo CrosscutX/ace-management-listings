@@ -28,8 +28,8 @@ img {
 .hero {
   display: flex;
   justify-content: center;
-  background-image: url("./assets/houses.jpg");
-  background-position: 65% 60%;
+  background-image: url("./assets/ace-house.jpg");
+  background-position: 80% 30%;
   align-items: center;
   height: 90vh;
   color: #fdfbff;
@@ -247,14 +247,14 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   padding-bottom: 20px;
-  height: auto;
-  width: auto;
+  height: 90%;
+  width: 90%;
   z-index: 1;
 }
 
 .large-image-container img {
   object-fit: contain;
-  max-width: 160%;
+  max-width: 100%;
   max-height: 100%;
 }
 
